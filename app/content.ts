@@ -9,16 +9,15 @@ export const site = {
   // Shown in the hero. Keep it to a sentence or two.
   tagline:
     "B.Sc. Computer Science student (MAGNET Excellence Program, HIT) with hands-on industry experience in cybersecurity.",
-  location: "San Francisco, CA",
-  email: "you@example.com",
+  location: "Israel",
+  email: "ron14.y@gmail.com",
   // Used for absolute URLs (OG tags, canonical). Set to your real domain after deploy.
-  url: "https://your-domain.com",
+  url: "https://nextjs-six-lilac-jggih94y1m.vercel.app",
 } as const;
 
 export const socials: { label: string; href: string }[] = [
-  { label: "GitHub", href: "https://github.com/your-handle" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/your-handle" },
-  { label: "X", href: "https://x.com/your-handle" },
+  { label: "GitHub", href: "https://github.com/ron14y-sys" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ron-yegerman-a35b7a248" },
 ];
 
 // Anchor sections rendered in the nav, in order.
