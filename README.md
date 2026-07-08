@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+A clean, minimal software-engineer portfolio built with Next.js 16 (App Router),
+React 19, and Tailwind CSS v4. Single page, fully static, dark-mode aware.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Making it yours
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**All content lives in one file: [`app/content.ts`](app/content.ts).** Edit it —
+no component code needs to change:
 
-## Learn More
+- `site` — your name, role, tagline, location, email, and public URL
+- `socials` — GitHub / LinkedIn / X links
+- `projects` — your project cards (title, description, tags, live/source links)
+- `experience` — your work history
+- `about` / `skills` — the About section text and skill chips
 
-To learn more about Next.js, take a look at the following resources:
+**Add a profile photo:** drop a square image at `public/avatar.jpg`, then set
+`HAS_PHOTO = true` in [`app/components/avatar.tsx`](app/components/avatar.tsx).
+Until then a clean monogram of your initials is shown.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Colors / theme:** the palette is a few CSS variables at the top of
+[`app/globals.css`](app/globals.css) (light and dark).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy to Vercel
 
-## Deploy on Vercel
+Vercel auto-detects Next.js — no config needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this project to a GitHub (or GitLab/Bitbucket) repo.
+2. Go to [vercel.com/new](https://vercel.com/new), import the repo, and click
+   **Deploy**. Build command (`next build`) and output are detected automatically.
+3. After the first deploy, set `site.url` in `app/content.ts` to your real domain
+   (used for SEO/OG tags), and add a custom domain in the Vercel dashboard if you
+   have one.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Or deploy from the CLI:
+
+```bash
+npm i -g vercel
+vercel          # preview deploy
+vercel --prod   # production deploy
+```
+
+## Scripts
+
+| Command         | Description                       |
+| --------------- | --------------------------------- |
+| `npm run dev`   | Start the dev server              |
+| `npm run build` | Production build (static export)  |
+| `npm run start` | Serve the production build        |
+| `npm run lint`  | Run ESLint                        |
