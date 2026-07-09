@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { site } from "../content";
 
-// To use a real photo: drop a square image at `public/avatar.jpg` and flip
-// this to `true`. Until then, a clean monogram placeholder is shown.
+// To use a real photo: drop a square image at `public/avatar.jpg` and set this
+// to `true`. Until then, the design's gradient monogram is shown.
 const HAS_PHOTO = false;
 
 function initials(name: string) {
@@ -21,10 +21,10 @@ export function Avatar() {
       <Image
         src="/avatar.jpg"
         alt={site.name}
-        width={112}
-        height={112}
+        width={92}
+        height={92}
         priority
-        className="h-28 w-28 rounded-full border border-border object-cover"
+        className="h-[92px] w-[92px] rounded-full object-cover shadow-[0_12px_32px_rgba(63,142,224,0.28)]"
       />
     );
   }
@@ -32,9 +32,11 @@ export function Avatar() {
   return (
     <div
       aria-hidden
-      className="flex h-28 w-28 select-none items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-strong font-mono text-3xl font-semibold tracking-tight text-white shadow-lg shadow-brand/30 ring-4 ring-brand/15"
+      className="flex h-[92px] w-[92px] select-none items-center justify-center rounded-full bg-gradient-to-br from-[#6fb6ee] to-[#3f8ee0] shadow-[0_12px_32px_rgba(63,142,224,0.28)]"
     >
-      {initials(site.name)}
+      <span className="font-display text-3xl font-extrabold text-white">
+        {initials(site.name)}
+      </span>
     </div>
   );
 }

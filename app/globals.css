@@ -1,47 +1,29 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Theme — bright & blue. Airy light default with vivid blue accents,
-   plus a deep-navy dark mode.
+   Theme tokens — taken directly from the "Ron Yegerman Portfolio" design.
+   Light, airy blue palette. Manrope for display, Inter for body.
    --------------------------------------------------------------------------- */
-:root {
-  --background: #eef5ff;
-  --foreground: #0b1b3a;
-  --muted: #5a6b8c;
-  --border: #d3e3fb;
-  --card: #ffffff;
-  --brand: #2563eb;
-  --brand-strong: #1d4ed8;
-  --accent: var(--brand);
-  --accent-contrast: #ffffff;
-}
+@theme {
+  --color-page: #f3f9fd;
+  --color-panel: #eaf5fd;
+  --color-card: #ffffff;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #060c1c;
-    --foreground: #e7effd;
-    --muted: #8ba1c9;
-    --border: #1c2c4d;
-    --card: #0d1830;
-    --brand: #5b9bff;
-    --brand-strong: #3b82f6;
-    --accent: var(--brand);
-    --accent-contrast: #05122e;
-  }
-}
+  --color-ink: #123049;
+  --color-body: #4b6b84;
+  --color-body-strong: #33556e;
+  --color-label: #6f93ac;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
-  --color-card: var(--card);
-  --color-brand: var(--brand);
-  --color-brand-strong: var(--brand-strong);
-  --color-accent: var(--accent);
-  --color-accent-contrast: var(--accent-contrast);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: #3f8ee0;
+  --color-brand-ink: #2f6fb0;
+  --color-brand-deep: #1b4d80;
+
+  --color-line: #dceefa;
+  --color-line-soft: #d3e8f7;
+  --color-line-btn: #cfe6f7;
+
+  --font-sans: var(--font-inter), Helvetica, Arial, sans-serif;
+  --font-display: var(--font-manrope), Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -57,43 +39,10 @@ html {
 }
 
 body {
-  color: var(--foreground);
-  background-color: var(--background);
-  /* Bright blue glow at the top that fades into the page. */
-  background-image: radial-gradient(
-      70rem 40rem at 50% -10rem,
-      color-mix(in oklab, var(--brand) 28%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      50rem 30rem at 100% 0,
-      color-mix(in oklab, var(--brand) 14%, transparent),
-      transparent 65%
-    );
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Small uppercase label above each section — now in brand blue. */
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--brand);
-}
-
-/* Blue gradient text for headings that should pop. */
-.text-gradient {
-  background-image: linear-gradient(
-    120deg,
-    var(--foreground),
-    var(--brand-strong) 55%,
-    var(--brand)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+::selection {
+  background: #bfe0f7;
 }

@@ -1,34 +1,46 @@
-import { site, socials } from "../content";
-import { Section } from "./section";
+import { contact, site, socials } from "../content";
 
 export function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Let's talk">
-      <p className="max-w-xl text-base leading-7 text-muted">
-        I&apos;m open to interesting projects and conversations. The fastest way
-        to reach me is email — I usually reply within a day.
-      </p>
+    <section
+      id="contact"
+      className="bg-gradient-to-b from-[#dcf0fc] to-[#eaf5fd] px-8 py-24"
+    >
+      <div className="mx-auto flex max-w-[640px] flex-col items-center gap-5 text-center">
+        <h2 className="font-display text-[34px] font-extrabold text-ink">
+          {contact.heading}
+        </h2>
+        <p className="text-[16.5px] leading-[1.7] text-body">{contact.blurb}</p>
 
-      <a
-        href={`mailto:${site.email}`}
-        className="mt-6 inline-flex items-center font-mono text-lg font-medium text-brand underline-offset-4 hover:underline"
-      >
-        {site.email}
-      </a>
-
-      <div className="mt-8 flex flex-wrap gap-4 text-sm">
-        {socials.map((s) => (
+        <div className="mt-2.5 flex flex-wrap justify-center gap-3.5">
           <a
-            key={s.label}
-            href={s.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted underline-offset-4 hover:text-brand hover:underline"
+            href={`mailto:${site.email}`}
+            className="rounded-full bg-brand px-7 py-[13px] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(63,142,224,0.3)] transition-transform hover:-translate-y-0.5"
           >
-            {s.label} ↗
+            {site.email}
           </a>
-        ))}
+          <a
+            href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
+            className="rounded-full border border-line-btn bg-card px-7 py-[13px] text-[15px] font-semibold text-brand-ink transition-colors hover:border-brand"
+          >
+            {site.phone}
+          </a>
+        </div>
+
+        <div className="mt-4 flex gap-6">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14.5px] font-semibold text-brand-ink transition-colors hover:text-brand-deep"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }
