@@ -33,10 +33,28 @@ export type Project = {
   meta: string;
   description: string;
   tags: string[];
+  live?: string;
   source?: string;
+  colab?: string;
 };
 
 export const projects: Project[] = [
+  {
+    title: "MedBoard IL — AI-Powered Adaptive Learning Platform",
+    meta: "Personal Project · 2026 – Present",
+    description:
+      "A full-stack, AI-powered medical exam-prep platform (React 18 + Vite, Supabase / Postgres) that calls the Anthropic Claude API through a secure server-side edge function, keeping API keys off the client. The evidence-based learning engine — spaced repetition (FSRS-5), targeted remediation, interleaving, and confidence calibration — runs as pure, node-testable modules driven by an append-only telemetry log of every answer. An LLM-driven quality pipeline grounds each explanation against a verified source corpus, with an admin moderation panel gating a ~1,050-question bank and full RTL↔LTR internationalization across 5 languages.",
+    tags: [
+      "React 18",
+      "Vite",
+      "Supabase / Postgres",
+      "Claude API",
+      "Edge Functions",
+      "FSRS-5",
+      "i18n",
+    ],
+    live: "https://pilot-orilencovskys-projects.vercel.app/",
+  },
   {
     title: "Image Classification — FashionMNIST",
     meta: "HIT Academic Project · 2024",
@@ -44,6 +62,8 @@ export const projects: Project[] = [
       "Engineered a multi-label image classifier in Python using NumPy, Pandas, and Scikit-learn on the FashionMNIST dataset; applied feature engineering, model tuning, and performance evaluation.",
     tags: ["Python", "NumPy", "Pandas", "Scikit-learn"],
     source: "https://github.com/ron14y-sys/project-FashionMNIST",
+    colab:
+      "https://colab.research.google.com/github/ron14y-sys/project-FashionMNIST/blob/main/fashionDetectionModel.ipynb",
   },
 ];
 
