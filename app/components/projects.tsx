@@ -39,7 +39,7 @@ export function Projects() {
               ))}
             </ul>
 
-            {(project.live || project.source) && (
+            {(project.live || project.source || project.colab) && (
               <div className="mt-1.5 flex flex-wrap gap-5">
                 {project.live && (
                   <a
@@ -59,6 +59,16 @@ export function Projects() {
                     className="text-[14.5px] font-semibold text-brand-ink transition-colors hover:text-brand-deep"
                   >
                     View on GitHub →
+                  </a>
+                )}
+                {project.colab && (
+                  <a
+                    href={project.colab}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[14.5px] font-semibold text-brand-ink transition-colors hover:text-brand-deep"
+                  >
+                    Open in Colab →
                   </a>
                 )}
               </div>

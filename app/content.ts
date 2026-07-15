@@ -35,6 +35,7 @@ export type Project = {
   tags: string[];
   live?: string;
   source?: string;
+  colab?: string;
 };
 
 export const projects: Project[] = [
@@ -61,6 +62,8 @@ export const projects: Project[] = [
       "Engineered a multi-label image classifier in Python using NumPy, Pandas, and Scikit-learn on the FashionMNIST dataset; applied feature engineering, model tuning, and performance evaluation.",
     tags: ["Python", "NumPy", "Pandas", "Scikit-learn"],
     source: "https://github.com/ron14y-sys/project-FashionMNIST",
+    colab:
+      "https://colab.research.google.com/github/ron14y-sys/project-FashionMNIST/blob/main/fashionDetectionModel.ipynb",
   },
 ];
 
